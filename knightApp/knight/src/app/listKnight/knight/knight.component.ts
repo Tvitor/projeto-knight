@@ -1,3 +1,4 @@
+
 import {
   Component,
   OnInit
@@ -11,6 +12,8 @@ import {
   HttpHandler,
   HttpHeaders
 } from '@angular/common/http';
+import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
+import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 
 @Component({
   selector: 'app-knight',
@@ -21,7 +24,12 @@ import {
 
 export class KnightComponent implements OnInit {
   list
-  arms
+
+  searchText
+
+
+
+
 
   constructor(private http: HttpClient) {
 
@@ -31,7 +39,6 @@ export class KnightComponent implements OnInit {
     let urlList = 'http://localhost:5000/knight'
     this.http.get(urlList).subscribe(resp => {
       this.list = resp
-      this.arms = resp
 
     })
 

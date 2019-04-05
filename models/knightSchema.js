@@ -23,7 +23,6 @@ let knightSchema = new Schema({
     weapons: [{
         name:{
             type:String,
-        required: true,
         max:45
         },
         mod: Number,
@@ -72,7 +71,9 @@ let knightSchema = new Schema({
      
 
     }],
-    keyAttribute: String
+    
+    keyAttribute: String,
+    status: Boolean
 })
 
 
