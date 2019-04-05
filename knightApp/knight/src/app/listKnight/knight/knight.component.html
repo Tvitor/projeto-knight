@@ -1,0 +1,30 @@
+<h1>hello</h1>
+<ul>
+<li *ngFor="let knight of list">
+{{knight.name}}<br>
+{{knight.nickname}}<br>
+{{knight.birthday}}<br>
+<ul>
+<li *ngFor="let weapons of knight.weapons">
+{{weapons.name}}<br>
+{{weapons.mod}}<br>
+{{weapons.attr}}<br>
+{{weapons.eqquiped}}<br>
+</li>
+</ul>
+<ul>
+  <li *ngFor="let attributes of knight.attributes">
+    {{attributes.strength}}<br>
+    {{attributes.strength}}<br>
+    {{attributes.strength}}<br>
+    {{attributes.strength}}<br>
+    {{attributes.strength}}<br>
+    {{attributes.strength}}<br>
+
+  </li>
+</ul>
+{{knight.keyAttribute}}<br>
+
+</li>
+
+</ul>
