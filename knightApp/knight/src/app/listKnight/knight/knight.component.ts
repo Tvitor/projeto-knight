@@ -1,3 +1,4 @@
+import { NgForm }   from '@angular/forms';
 
 import {
   Component,
@@ -23,14 +24,17 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 
 
 export class KnightComponent implements OnInit {
-  list
+  list: any
+  postData :  string
 
-  searchText
+  onSubmit(f: NgForm) {
+   f.value
+   let urlList = 'http://localhost:5000/knight'
 
 
 
 
-
+  }
   constructor(private http: HttpClient) {
 
   }
@@ -41,6 +45,7 @@ export class KnightComponent implements OnInit {
       this.list = resp
 
     })
+
 
   }
 

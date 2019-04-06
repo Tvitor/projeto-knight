@@ -1,73 +1,94 @@
-<h1>hello</h1>
-<ul>
-<li *ngFor="let knight of list">
-  <div *ngIf = "knight.status === false">
-    {{knight._id}}
-{{knight.name}}<br>
-{{knight.nickname}}<br>
-{{knight.birthday}}<br>
-<ul>
-<li *ngFor="let weapons of knight.weapons">
-{{weapons.name}}<br>
-{{weapons.mod}}<br>
-{{weapons.attr}}<br>
-{{weapons.eqquiped}}<br>
-</li>
-</ul>
-<ul>
-  <li *ngFor="let attributes of knight.attributes">
-    {{attributes.strength}}<br>
-    {{attributes.strength}}<br>
-    {{attributes.strength}}<br>
-    {{attributes.strength}}<br>
-    {{attributes.strength}}<br>
-    {{attributes.strength}}<br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">HEROES </a>
+    </div>
+  </div>
+</nav>
+<header>
+    <h1 class="h1">KNIGHTS OF CHALLENGE</h1>
+    <!-- Knight List -->
+  </header>
+<div class="wrapper">
+  <div class="container-fluid">
 
-  </li>
-</ul>
-{{knight.keyAttribute}}<br>
-</div>
-</li>
+    <div class="row">
+      <div class="col-md-2 a">
 
-</ul>
+        <h3>Attributes</h3>
 
-<h3>hall of heroes</h3>
+          <div *ngFor="let knight of list">
 
-<ul>
-    <li *ngFor="let knight of list">
-      <div *ngIf = "knight.status === true">
-          {{knight._id}}
-    {{knight.name}}<br>
-    {{knight.nickname}}<br>
-    {{knight.birthday}}<br>
-    <ul>
-    <li *ngFor="let weapons of knight.weapons">
-    {{weapons.name}}<br>
-    {{weapons.mod}}<br>
-    {{weapons.attr}}<br>
-    {{weapons.eqquiped}}<br>
-    </li>
-    </ul>
-    <ul>
-      <li *ngFor="let attributes of knight.attributes">
-        {{attributes.strength}}<br>
-        {{attributes.strength}}<br>
-        {{attributes.strength}}<br>
-        {{attributes.strength}}<br>
-        {{attributes.strength}}<br>
-        {{attributes.strength}}<br>
 
+              <div *ngFor="let attributes of knight.attributes">
+                {{attributes.strength}}
+                {{attributes.strength}}
+                {{attributes.strength}}
+                {{attributes.strength}}
+                {{attributes.strength}}
+                {{attributes.strength}}
+
+              </div>
+            </div>
+
+          <h3>EXPERIENCE</h3>
+      </div>
+      <div class="col-md-8 b">
+          <h3>HEROES</h3>
+
+    <div *ngFor="let knight of list">
+      <!--  If false then off hero -->
+      <div *ngIf="knight.status === false">
+        <table>
+          <thead>
+            <tr>
+            <th>Name</th>
+            <th>Age</th>
+          <th>Weapons</th>
+          <th>Attribute</th>
+          <th>Attr</th>
+          <th>Exp</th>
+          </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>{{knight.name}}</td>
+                <td>{{knight.birthday}}</td>
+                <td *ngFor="let weapons of knight.weapons">
+                      {{weapons.name}}
+                  </td>
+              </tr>
+              </tbody>
+        </table>
+
+
+        {{knight.keyAttribute}}<br>
+      </div>
+    </div>
+
+
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <input name="name" ngModel required #name="ngModel">
+
+      <button>Submit</button>
+    </form>
+      </div>
+      <div class="col-md-2 c"><h3>HALL OF HEROES</h3>
+
+  <ul>
+      <li *ngFor="let knight of list">
+        <div *ngIf="knight.status === true">
+
+          {{knight.name}}<br>
+
+        </div>
       </li>
     </ul>
-    {{knight.keyAttribute}}<br>
+      </div>
     </div>
-    </li>
-
-    </ul>
-
-
-    <h3>Filter</h3>
-
-
-    <h3>update</h3>
-
+  </div>
+</div>
