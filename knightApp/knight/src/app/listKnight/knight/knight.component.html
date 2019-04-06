@@ -5,7 +5,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">HEROES </a>
+      <a class="nav-item nav-link active" href="#">KNIGHT </a>
     </div>
   </div>
 </nav>
@@ -25,8 +25,8 @@
           <h3>EXPERIENCE</h3>
       </div>
       <div class="col-md-8 b">
-          <h3>HEROES</h3>
-
+        <div class="row">
+          <div class="col-md-5"></div>
     <div *ngFor="let knight of list">
       <!--  If false then off hero -->
       <div *ngIf="knight.status === false">
@@ -34,36 +34,30 @@
           <thead>
             <tr>
             <th>Name</th>
+            <td>{{knight.name}}</td>
             <th>Age</th>
+            <td>{{knight.birthday}}</td>
           <th>Weapons</th>
+          <td *ngFor="let weapons of knight.weapons">
+              {{weapons.name}}
+        </td>
           <th>Attribute</th>
+          <td> {{knight.keyAttribute}}</td>
           <th>Attr</th>
           <th>Exp</th>
           </tr>
           </thead>
-          <tbody>
-              <tr>
-                <td>{{knight.name}}</td>
-                <td>{{knight.birthday}}</td>
-                <td *ngFor="let weapons of knight.weapons">
-                      {{weapons.name}}
-                  </td>
-              </tr>
-              </tbody>
         </table>
 
 
-        {{knight.keyAttribute}}<br>
+
       </div>
     </div>
 
 
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-      <input name="name" ngModel required #name="ngModel">
-
-      <button>Submit</button>
-    </form>
+  </div>
       </div>
+
       <div class="col-md-2 c"><h3>HALL OF HEROES</h3>
 
   <ul>

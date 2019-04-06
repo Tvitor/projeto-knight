@@ -34,3 +34,20 @@ h1,h2,h3,h4,h5 {
 ul, li {
   list-style:outside none none;
 }
+
+th,td {
+  border-style: solid;
+}
+
+table {
+  display: block;
+  position: relative;
+
+  width: 100% !important;margin: auto;
+}
+
+
+  th,td, tr, thead,tbody {
+    display: block;
+  }
+

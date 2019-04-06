@@ -25,16 +25,8 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 
 export class KnightComponent implements OnInit {
   list: any
-  postData :  string
-
-  onSubmit(f: NgForm) {
-   f.value
-   let urlList = 'http://localhost:5000/knight'
 
 
-
-
-  }
   constructor(private http: HttpClient) {
 
   }
