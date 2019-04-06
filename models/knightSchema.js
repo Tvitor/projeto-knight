@@ -27,7 +27,8 @@ let knightSchema = new Schema({
         },
         mod: Number,
         attr: String,
-        eqquiped: Boolean
+        equipped: Boolean,
+        amount: Number
     }],
 
     attributes:[{
