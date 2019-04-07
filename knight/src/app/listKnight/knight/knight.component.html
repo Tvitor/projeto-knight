@@ -1,30 +1,51 @@
 <!--header -->
 <header>
-    <h1>KNIGHT OF CHALLENGE</h1>
+  <h1>KNIGHT OF CHALLENGE</h1>
 </header>
 <!--header -->
 <div *ngFor="let knight of list">
-    <!--  If false then off hero -->
-    <div *ngIf="knight.status === false">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Weapons</th>
-            <th>Attribute</th>
-            <th>Attr</th>
-            <th>Exp</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{knight.name | uppercase}}</td>
-            <td>{{knight.birthday | date: 'dd/MM/yyyy'}}</td>
-            <td *ngFor="let weapons of knight.weapons">{{weapons.name | uppercase}}</td>
-            <td> {{knight.keyAttribute}}</td>
-          </tr>
-        </tbody>
-      </table>
+  <!--  If false then off hero -->
+  <div *ngIf="knight.status === false">
+    <div class="listKnight">
+      <div class="row">
+        <div class="col-sm">
+          {{name | uppercase}}
+          <div class="row">
+            <div class="col-sm">
+              {{knight.name | uppercase}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          {{age | uppercase}}
+          <div class="row">
+            <div class="col-sm">
+              {{knight.birthday | date: 'dd/MM/yyyy'}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          {{weapons | uppercase}}
+          <div class="row">
+            <div class="col-sm">
+              <div *ngFor="let weapons of knight.weapons">{{weapons.name | uppercase}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          {{attribute | uppercase}}
+          <div class="row">
+            <div class="col-sm">
+              {{knight.keyAttribute | uppercase}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          {{Attr | uppercase}}
+        </div>
+        <div class="col-sm"> {{Exp | uppercase}}
+        </div>
+      </div>
     </div>
   </div>
+</div>

@@ -26,6 +26,12 @@ import {
 export class KnightComponent implements OnInit {
   list: any
 
+  name:String = 'Name'
+  age:String = 'age'
+  weapons:String = 'Weapons'
+  attribute:String = 'attribute'
+  Attr:String = 'Attr'
+  Exp:String = 'Exp'
   constructor(private http: HttpClient) {
 
   }
