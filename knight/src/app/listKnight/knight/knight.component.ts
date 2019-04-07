@@ -1,4 +1,6 @@
-import { NgForm }   from '@angular/forms';
+import {
+  NgForm
+} from '@angular/forms';
 
 import {
   Component,
@@ -13,8 +15,7 @@ import {
   HttpHandler,
   HttpHeaders
 } from '@angular/common/http';
-import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+
 
 @Component({
   selector: 'app-knight',
@@ -22,10 +23,8 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
   styleUrls: ['./knight.component.css']
 })
 
-
 export class KnightComponent implements OnInit {
   list: any
-
 
   constructor(private http: HttpClient) {
 
@@ -38,11 +37,6 @@ export class KnightComponent implements OnInit {
 
     })
 
-
   }
-
-
-
-
 
 }
