@@ -1,0 +1,14 @@
+<!--header -->
+  <header>
+    <h1>HALL OF HEROES</h1>
+  </header>
+<!--header -->
+<ul>
+  <li *ngFor="let knight of list">
+    <div *ngIf="knight.status === true">
+
+      {{knight.name}}<br>
+
+    </div>
+  </li>
+</ul>

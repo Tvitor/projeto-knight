@@ -1,1 +1,28 @@
-<router-outlet></router-outlet>
+<!-- Knight HomePage -->
+<!--Nav -->
+<div class="wrapper">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" [routerLink]="['createKnight']"> CREATE </a>
+      <a class="nav-item nav-link active" [routerLink]="['knight']"> KNIGHTS </a>
+      <a class="nav-item nav-link active" [routerLink]="['hall']"> HALL OF HEROES </a>
+    </div>
+  </div>
+</nav>
+<!--Nav -->
+
+<!--content -->
+<main class="container">
+
+  <router-outlet></router-outlet>
+
+</main>
+
+<!--content -->
+</div>
+

@@ -2,7 +2,7 @@
 
 
 html, body {
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
+text-align: center;
+background-color: rgb(0, 0, 0);
+color:rgb(141, 139, 139);
 }

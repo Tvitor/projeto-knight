@@ -1,83 +1,30 @@
-<!-- Knight HomePage -->
-
-<div class="wrapper">
-  <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-          <!--header -->
-        <header>
-          <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-              <h1 class="h1">KNIGHTS OF CHALLENGE</h1>
-            </div>
-            <div class="col-md-3"></div>
-          </div>
-        </header>
-          <!--header -->
-        <!--Nav -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="#">KNIGHT </a>
-            </div>
-          </div>
-        </nav>
-        <!--Nav -->
-        </div>
-      <div class="col-md-3">
-
-        <h3>EXPERIENCE</h3>
-      </div>
-      <div class="col-md-4">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div *ngFor="let knight of list">
-            <!--  If false then off hero -->
-            <div *ngIf="knight.status === false">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Weapons</th>
-                    <th>Attribute</th>
-                    <th>Attr</th>
-                    <th>Exp</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{{knight.name | uppercase}}</td>
-                    <td>{{knight.birthday | date: 'dd/MM/yyyy'}}</td>
-                    <td *ngFor="let weapons of knight.weapons">{{weapons.name | uppercase}}</td>
-                    <td> {{knight.keyAttribute}}</td>
-                  </tr>
-                </tbody>
-              </table>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <h3>HALL OF HEROES</h3>
-        <ul>
-          <li *ngFor="let knight of list">
-            <div *ngIf="knight.status === true">
-
-              {{knight.name}}<br>
-
-            </div>
-          </li>
-        </ul>
-      </div>
+<!--header -->
+<header>
+    <h1>KNIGHT OF CHALLENGE</h1>
+</header>
+<!--header -->
+<div *ngFor="let knight of list">
+    <!--  If false then off hero -->
+    <div *ngIf="knight.status === false">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Weapons</th>
+            <th>Attribute</th>
+            <th>Attr</th>
+            <th>Exp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{knight.name | uppercase}}</td>
+            <td>{{knight.birthday | date: 'dd/MM/yyyy'}}</td>
+            <td *ngFor="let weapons of knight.weapons">{{weapons.name | uppercase}}</td>
+            <td> {{knight.keyAttribute}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-</div>

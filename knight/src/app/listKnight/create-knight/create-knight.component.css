@@ -1,0 +1,11 @@
+header {
+  border: 5px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(141, 139, 139);
+}
