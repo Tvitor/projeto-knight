@@ -7,7 +7,7 @@
   <li *ngFor="let knight of list">
     <div *ngIf="knight.status === true">
 
-      {{knight.name}}<br>
+      {{knight.name | uppercase}}<br>
 
     </div>
   </li>
