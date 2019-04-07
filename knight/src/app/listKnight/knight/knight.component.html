@@ -35,22 +35,18 @@
             <tr>
             <th>Name</th>
             <th>Age</th>
-            <!--
-
-          <th>Weapons</th>
-          <td *ngFor="let weapons of knight.weapons">
-              {{weapons.name}}
-        </td> -->
-          <!-- <th>Attribute</th>
-          <td> {{knight.keyAttribute}}</td>
-          <th>Attr</th>
-          <th>Exp</th>
-          </tr> -->
+            <th>Weapons</th>
+            <th>Attribute</th>
+            <th>Attr</th>
+            <th>Exp</th>
+            </tr>
           </thead>
           <tbody>
             <tr>
-              <td>{{knight.name}}</td>
+              <td>{{knight.name | uppercase}}</td>
               <td>{{knight.birthday | date: 'dd/MM/yyyy'}}</td>
+              <td *ngFor="let weapons of knight.weapons">{{weapons.name | uppercase}}</td>
+              <td> {{knight.keyAttribute}}</td>
             </tr>
           </tbody>
         </table>
