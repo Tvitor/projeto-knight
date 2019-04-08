@@ -99,3 +99,8 @@ div {
 .listKnight {
  margin-bottom: 50px;
 }
+
+a, .heroName
+{
+text-decoration:none;
+}

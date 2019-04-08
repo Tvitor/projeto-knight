@@ -1,11 +1,5 @@
-
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  Injectable
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
 import {
   HttpClientModule,
   HttpClient,
@@ -13,14 +7,12 @@ import {
   HttpHeaders
 } from '@angular/common/http';
 
-
 @Component({
-  selector: 'app-knight',
-  templateUrl: './knight.component.html',
-  styleUrls: ['./knight.component.css']
+  selector: 'app-edit-knight',
+  templateUrl: './edit-knight.component.html',
+  styleUrls: ['./edit-knight.component.css']
 })
-
-export class KnightComponent implements OnInit {
+export class EditKnightComponent implements OnInit {
   list: any
   expTot: Number
   name:String = 'Name'
@@ -30,6 +22,7 @@ export class KnightComponent implements OnInit {
   Attr:String = 'Attr'
   Exp:String = 'Exp'
   urlList = 'http://localhost:5000/knight'
+
   constructor(private http: HttpClient) {
 
   }
@@ -42,6 +35,7 @@ export class KnightComponent implements OnInit {
 
   }
 
+
   onSubmit(knight) {
     let knightToUpdate
     let nameHero
@@ -50,13 +44,10 @@ export class KnightComponent implements OnInit {
     this.http.get(this.urlList + '/' + knight.id).subscribe(x => {
       knightToUpdate = x});
 
-      knightToUpdate.nameHero = knight.nameHero;
+      knightToUpdate.this.oldNickName = knight.nameHero;
 
     this.http.put(this.urlList + '/' + knight._id, knightToUpdate);
   }
 
-  // Calcular expriencia
-    // calcExp() {
-    //   this.expTot = Math.floor((this.birthday - 7)* Math.pow(22,1.45))
-    // }
+
 }

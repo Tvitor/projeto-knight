@@ -7,13 +7,17 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { KnightComponent } from './listKnight/knight/knight.component';
 import { FormsModule } from '@angular/forms';
 import { HallofHeroesComponent } from './listKnight/hallof-heroes/hallof-heroes.component';
+import { KnightOtherStatsComponent } from './knight-other-stats/knight-other-stats.component';
+import { EditKnightComponent } from './edit-knight/edit-knight.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     KnightComponent,
     HallofHeroesComponent,
-    CreateKnightComponent
+    CreateKnightComponent,
+    KnightOtherStatsComponent,
+    EditKnightComponent
 
   ],
   imports: [

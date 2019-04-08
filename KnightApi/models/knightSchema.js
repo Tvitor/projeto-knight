@@ -3,27 +3,27 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let knightSchema = new Schema({
-    name : {
-        type:String,
+    name: {
+        type: String,
         required: true,
-        max:45
+        max: 45
     },
 
-    nickname:{
-        type:String,
+    nickname: {
+        type: String,
         required: true,
-        max:45
+        max: 45
     },
 
-    birthday:{
-        type:Date,
-        default:Date.now
+    birthday: {
+        type: Date,
+        default: Date.now
     },
 
     weapons: [{
-        name:{
-            type:String,
-        max:45
+        name: {
+            type: String,
+            max: 45
         },
         mod: Number,
         attr: String,
@@ -31,48 +31,48 @@ let knightSchema = new Schema({
         amount: Number
     }],
 
-    attributes:[{
-        
+    attributes: [{
+
         strength: {
-            type:Number,
-             min:0,
-             max:20
+            type: Number,
+            min: 0,
+            max: 20
         },
 
         dexterity: {
-            type:Number,
-             min:0,
-             max:20
+            type: Number,
+            min: 0,
+            max: 20
         },
 
         constitution: {
-            type:Number,
-             min:0,
-             max:20
+            type: Number,
+            min: 0,
+            max: 20
         },
 
         inteligence: {
-            type:Number,
-             min:0,
-             max:20
+            type: Number,
+            min: 0,
+            max: 20
         },
 
         wisdom: {
-            type:Number,
-             min:0,
-             max:20
+            type: Number,
+            min: 0,
+            max: 20
         },
 
         charisma: {
-            type:Number,
-             min:0,
-             max:20
+            type: Number,
+            min: 0,
+            max: 20
         },
 
-     
+
 
     }],
-    
+
     keyAttribute: String,
     status: Boolean
 })

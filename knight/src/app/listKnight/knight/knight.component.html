@@ -3,16 +3,18 @@
   <h1>KNIGHT OF CHALLENGE</h1>
 </header>
 <!--header -->
+
 <div *ngFor="let knight of list">
   <!--  If false then off hero -->
+
   <div *ngIf="knight.status === false">
     <div class="listKnight">
       <div class="row">
         <div class="col-sm">
-          {{name | uppercase}}
+         {{name | uppercase}}
           <div class="row">
             <div class="col-sm">
-              {{knight.name | uppercase}}
+                {{knight.name | uppercase}}
             </div>
           </div>
         </div>
@@ -20,7 +22,7 @@
           {{age | uppercase}}
           <div class="row">
             <div class="col-sm">
-              {{knight.birthday | date: 'dd/MM/yyyy'}}
+             {{knight.birthday | date: 'dd/MM/yyyy'}}
             </div>
           </div>
         </div>
@@ -28,7 +30,9 @@
           {{weapons | uppercase}}
           <div class="row">
             <div class="col-sm">
-              <div *ngFor="let weapons of knight.weapons">{{weapons.name | uppercase}}</div>
+              <div *ngFor="let weapon of knight.weapons">{{weapon.name | uppercase}},
+                amount: {{weapon.amount }}
+              </div>
             </div>
           </div>
         </div>
@@ -44,6 +48,7 @@
           {{Attr | uppercase}}
         </div>
         <div class="col-sm"> {{Exp | uppercase}}
+          {{knight._id}}
         </div>
       </div>
     </div>
