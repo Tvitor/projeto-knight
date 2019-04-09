@@ -30,14 +30,14 @@ export class KnightComponent implements OnInit {
 
   }
 
-  onEdit(knight) {
-    let knightToUpdate
-    let nameHero
+  // onEdit(knight) {
+  //   let knightToUpdate
+  //   let nameHero
 
-    this.service.list()
-      .subscribe(id => this.knights._id = id)
-      console.log(id)
-  }
+  //   this.service.list()
+  //     .subscribe(id => this.knights._id = id)
+  //     console.log(id)
+  // }
 
 }
 
