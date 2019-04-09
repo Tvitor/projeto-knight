@@ -228,5 +228,122 @@
         </div>
         </div>
 
+        <div class="row">
+            <div class="col-sm-6">
+            <form class="needs-validation primaryForm" novalidate [formGroup]="form">
+            <div class="form-row">
+              <div class="col-sm-6">
+                <label for="attributes.constitution">constitution</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="attributes.constitution"
+                  placeholder="constitution"
+                  formControlName="attributes.constitution"
+                  required
+                />
+              </div>
+            </div>
+            <div class="buttonsBtn float-left">
+              <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+              <button type="button" class="btn btn-default"(click)="onCancel()">Cancel</button>
+            </div>
+          </form>
+          </div>
+
+          <div class="col-sm-6">
+          <form class="needs-validation primaryForm" novalidate [formGroup]="form">
+              <div class="form-row">
+                <div class="col-sm-6">
+                  <label for="weapons.inteligence">inteligence</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="weapon.inteligence"
+                    placeholder="inteligence"
+                    formControlName="weapons.inteligence"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="buttonsBtn float-left">
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                <button type="button" class="btn btn-default"(click)="onCancel()">Cancel</button>
+              </div>
+            </form>
+          </div>
+          </div>
+
+          <div class="row">
+              <div class="col-sm-6">
+              <form class="needs-validation primaryForm" novalidate [formGroup]="form">
+              <div class="form-row">
+                <div class="col-sm-6">
+                  <label for="attributes.wisdom">wisdom</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="attributes.wisdom"
+                    placeholder="wisdom"
+                    formControlName="attributes.wisdom"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="buttonsBtn float-left">
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                <button type="button" class="btn btn-default"(click)="onCancel()">Cancel</button>
+              </div>
+            </form>
+            </div>
+
+            <div class="col-sm-6">
+            <form class="needs-validation primaryForm" novalidate [formGroup]="form">
+                <div class="form-row">
+                  <div class="col-sm-6">
+                    <label for="weapons.charisma">charisma</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="weapon.charisma"
+                      placeholder="charisma"
+                      formControlName="weapons.charisma"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="buttonsBtn float-left">
+                  <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                  <button type="button" class="btn btn-default"(click)="onCancel()">Cancel</button>
+                </div>
+              </form>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-sm-6">
+                <form class="needs-validation primaryForm" novalidate [formGroup]="form">
+                    <div class="form-row">
+                      <div class="col-sm-6">
+                        <label for="keyAttribute">keyAttribute</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="keyAttribute"
+                          placeholder="keyAttribute"
+                          formControlName="keyAttribute"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="buttonsBtn float-left">
+                      <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                      <button type="button" class="btn btn-default"(click)="onCancel()">Cancel</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+
+
 
 
