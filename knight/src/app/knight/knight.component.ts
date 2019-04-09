@@ -20,6 +20,8 @@ export class KnightComponent implements OnInit {
   age:String = 'Age'
   weapons:String = 'Weapons'
   attribute:String = 'Attribute'
+  attr:String = 'Attr'
+  exp:String = 'Exp'
   knights: Knight[]
 
   constructor(private service: KnightsService){}

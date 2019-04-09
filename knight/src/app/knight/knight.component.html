@@ -67,10 +67,15 @@
       <tr class="float-left">
         <th>#</th>
           <th>{{name}}</th>
+          <th>{{''}}</th>
           <th>{{age}}</th>
+          <th>{{''}}</th>
+          <th>{{''}}</th>
           <th>{{weapons}}</th>
+          <th>{{''}}</th>
           <th>{{attribute}}</th>
           <th></th>
+
       </tr>
     </thead>
     <tbody>
@@ -84,9 +89,20 @@
         <td *ngFor="let weapon of knight.weapons">
             {{weapon.name}},
             amount: {{weapon.amount}}</td>
+            <th>{{''}}</th>
         <td>{{knight.keyAttribute}}</td>
+        <td>{{''}}</td>
+        <td>{{''}}</td>
+        <td>{{''}}</td>
+        <td>{{''}}</td>
+        <td>{{''}}</td>
+        <td>{{''}}</td>
+        <td>{{''}}</td>
+        <td>{{''}}</td>
+        <td>{{''}}</td>
+        <td>{{''}}</td>
         <td>
-          <span class="float-right">
+          <div class="float-right">
             <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(knight)" >
               Update Nickname
             </button>
@@ -94,7 +110,7 @@
             <button class="btn btn-outline-warning mb-1 btn-sm">
                Remove Knight
               </button>
-          </span>
+          </div>
         </td>
         </section>
       </tr>
