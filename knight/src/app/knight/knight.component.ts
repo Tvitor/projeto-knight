@@ -1,5 +1,6 @@
 //List Knights
-
+import { catchError, switchMap} from 'rxjs/operators';
+import { Router} from '@angular/router';
 import { KnightsService } from '../modules/knights.service';
 import {Knight} from "../modules/knight"
 import {Component,OnInit} from '@angular/core';
@@ -21,9 +22,7 @@ export class KnightComponent implements OnInit {
   attribute:String = 'Attribute'
   knights: Knight[]
 
-  constructor(private service: KnightsService) {
-
-  }
+  constructor(private service: KnightsService){}
 
   ngOnInit() {
     this.service.list()
@@ -31,9 +30,16 @@ export class KnightComponent implements OnInit {
 
   }
 
+  onEdit(knight) {
+    let knightToUpdate
+    let nameHero
 
+    this.service.list()
+      .subscribe(id => this.knights._id = id)
+      console.log(id)
+  }
 
-
+}
 
 
 
@@ -80,4 +86,4 @@ export class KnightComponent implements OnInit {
     // calcExp() {
     //   this.expTot = Math.floor((this.birthday - 7)* Math.pow(22,1.45))
     // }
-}
+

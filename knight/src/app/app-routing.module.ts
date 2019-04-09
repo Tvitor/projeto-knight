@@ -7,6 +7,7 @@ import { KnightComponent } from './knight/knight.component';
 
 const routes: Routes = [
   {path:'new', component:KnightFormComponent},
+  {path:'edit/:_id', component:KnightFormComponent},
   {path:'knight', component: KnightComponent},
   {path:'hall', component: HallofHeroesComponent},
   {path:'', redirectTo: 'knight', pathMatch: 'full'}
