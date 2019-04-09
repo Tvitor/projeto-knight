@@ -15,4 +15,8 @@ private readonly API = 'http://localhost:5000/knight'
   list() {
     return this.http.get<Knight[]>(this.API)
   }
+
+  create(knight) {
+    return this.http.post(this.API, knight)
+  }
 }

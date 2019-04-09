@@ -1,3 +1,4 @@
+import { KnightsService } from './../modules/knights.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
@@ -11,7 +12,7 @@ export class KnightFormComponent implements OnInit {
   form: FormGroup
   submitted = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private service: KnightsService) { }
 
   ngOnInit() {
 
@@ -49,6 +50,9 @@ onSubmit(){
   console.log(this.form.value)
   if(this.form.valid) {
     console.log('submit')
+    this.service.create(this.form.value).subscribe(
+      sucess => console.log('sucess')
+    )
   }
 }
 onCancel(){
