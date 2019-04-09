@@ -1,0 +1,103 @@
+<!--header -->
+<header>
+  <h1>KNIGHT OF CHALLENGE</h1>
+</header>
+<!--header -->
+
+<!-- <div *ngFor="let knight of list"> -->
+  <!--  If true then is Hero -->
+  <!-- <div *ngIf="knight.status === false">
+    <div class="listKnight">
+      <div class="row">
+        <div class="col-sm">
+         {{name }}
+          <div class="row">
+            <div class="col-sm">
+                {{knight.name }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          {{age }}
+          <div class="row">
+            <div class="col-sm">
+             {{knight.birthday | date: 'dd/MM/yyyy'}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          {{weapons }}
+          <div class="row">
+            <div class="col-sm">
+              <div *ngFor="let weapon of knight.weapons">{{weapon.name }},
+                amount: {{weapon.amount }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          {{attribute }}
+          <div class="row">
+            <div class="col-sm">
+              {{knight.keyAttribute }}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          {{Attr }}
+        </div>
+        <div class="col-sm"> {{Exp }}
+          {{knight._id}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="card-header">
+  <div class="float-left">
+    <h4>Knights</h4>
+  </div>
+
+</div>
+<div class="class-body">
+  <table class="table table-hover">
+    <thead>
+      <tr class="float-left">
+        <th>#</th>
+          <th>{{name}}</th>
+          <th>{{age}}</th>
+          <th>{{weapons}}</th>
+          <th>{{attribute}}</th>
+          <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let knight of knights let id = index">
+        <!--  If true then is Hero -->
+        <section *ngIf="knight.status === false">
+
+        <td>{{id}}</td>
+        <td>{{knight.name}}</td>
+        <td>{{knight.birthday| date: 'dd/MM/yyyy'}}</td>
+        <td *ngFor="let weapon of knight.weapons">
+            {{weapon.name}},
+            amount: {{weapon.amount}}</td>
+        <td>{{knight.keyAttribute}}</td>
+        <td>
+          <span class="float-right">
+            <button class="btn btn-outline-warning mb-1 btn-sm">
+              Update Nickname
+            </button>
+
+            <button class="btn btn-outline-warning mb-1 btn-sm">
+               Remove Knight
+              </button>
+          </span>
+        </td>
+        </section>
+      </tr>
+    </tbody>
+  </table>
+</div>

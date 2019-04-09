@@ -82,25 +82,29 @@ h1 {
 h1 {
   font-size: 50px;
   font-weight: bold;
-  color: rgb(141, 139, 139);
+  color: rgb(197, 167, 34);
 }
 
 
-.listKnight {
+/* .listKnight {
   display: flex;
   flex-wrap: wrap
 
-}
+} */
 
 div {
   font-size:30px;
 }
 
-.listKnight {
+/* .listKnight {
  margin-bottom: 50px;
-}
+} */
 
 a, .heroName
 {
 text-decoration:none;
+}
+
+table {
+  color: rgb(255, 255, 255);
 }
