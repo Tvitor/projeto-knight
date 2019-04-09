@@ -20,13 +20,13 @@ export class KnightFormComponent implements OnInit {
       name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(45)]],
       nickname: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(45)]],
       birthday: [null],
-      // weapons: [{
-      //   name:[null],
-      //   mod:[null],
-      //   attr:[null],
-      //   equipped:[false],
-      //   amount:[null]
-      // }],
+      weapons: [{
+        name:[null],
+        mod:[null],
+        attr:[null],
+        equipped:[false],
+        amount:[null]
+      }],
       // attributes: [{
       //   type:[null],
       //   dexterity:[null],
