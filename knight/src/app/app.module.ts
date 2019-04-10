@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HallofHeroesComponent } from './hallof-heroes/hallof-heroes.component';
 import { KnightFormComponent } from './knight-form/knight-form.component';
 import { CommonModule} from '@angular/common';
+import { MomentModule } from 'angular2-moment';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { CommonModule} from '@angular/common';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
