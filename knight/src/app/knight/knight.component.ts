@@ -37,10 +37,10 @@ years = new Date()
 
   }
 
-
+  @Input() newNickName: String
 
 onEdit(knight){
-
+  console.log(this.newNickName)
     knight.nickname = this.newNickName
     this.http.put(this.url + '/' + knight._id, knight)
       .subscribe((knight) =>{

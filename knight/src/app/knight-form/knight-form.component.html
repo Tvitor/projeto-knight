@@ -61,181 +61,38 @@
         </div>
 
         <div class="col-sm-4" formGroupName="weapons">
-          <label for="equipped">Equipped</label>
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm">
-              <input type="checkbox" class="form-check-input" id="equipped" formControlName="equipped" />
-            </div>
-          </div>
-        </div>
-      </div>
+            <label for="mod"> Mod</label>
+          <input  type="number" class="form-control" id="mod" placeholder="mod" formControlName="mod" required>
+       </div>
 
-      <div class="row">
-          <div class="col-sm-4">
-            {{' '}}
-          </div>
-          <div class="col-sm-4">
-            <h3>Attributes</h3>
-          </div>
+    </div>
+  <div class="row">
+    <div class="col-sm-4 " >
+      {{' '}}
+    </div>
+    <div class="col-sm-4">
+        {{' '}}
+    </div>
 
-          <div class="col-sm-4">
-            {{' '}}
-          </div>
-        </div>
-
-      <div class="form-row">
-          <div class="col-sm-4" formGroupName="attributes">
-              <label for="strength">Strength</label>
-              <input type="text" class="form-control" id="strength" placeholder="Strength" formControlName="strength" required>
-            </div>
-
-            <div class="col-sm-4" formGroupName="attributes">
-                <label for="dexterity">Dexterity</label>
-                <input type="text" class="form-control" id="dexterity" placeholder="Dexterity" formControlName="dexterity" required>
-              </div>
-
-              <div class="col-sm-4" formGroupName="attributes">
-                  <label for="constitution">Constitution</label>
-                  <input type="text" class="form-control" id="constitution" placeholder="Constitution" formControlName="constitution" required>
-                </div>
-      </div>
-
-      <div class="form-row">
-          <div class="col-sm-4" formGroupName="attributes">
-              <label for="wisdom">Wisdom</label>
-              <input type="text" class="form-control" id="wisdom" placeholder=" Wisdom" formControlName="wisdom" required>
-            </div>
-
-            <div class="col-sm-4" formGroupName="attributes">
-                <label for="inteligence">Inteligence</label>
-                <input type="text" class="form-control" id="inteligence" placeholder="Inteligence" formControlName="inteligence" required>
-              </div>
-
-              <div class="col-sm-4" formGroupName="attributes">
-                  <label for="charisma">Charisma</label>
-                  <input type="text" class="form-control" id="charisma" placeholder="Charisma" formControlName="charisma" required>
-                </div>
-      </div>
-
-
-      <!-- <label for="equipped">equipped</label>
-            <input
-              type="text"
-              class="form-control"
-              id="equipped"
-              placeholder="equipped"
-              formControlName="equipped"
-              required
-            /> -->
-
-
-      <!-- <div class="row"> -->
-
-
-      <!-- <label for="amount">amount</label>
-              <input
-                type="text"
-                class="form-control"
-                id="amount"
-                placeholder="amount"
-                formControlName="amount"
-                required
-              /> -->
-      <!-- </div>
-        <div class="col-sm-4 "> -->
-      <!-- <label for="strength">strength</label>
-              <input
-                type="text"
-                class="form-control"
-                id="strength"
-                placeholder="strength"
-                formControlName="strength"
-                required
-              /> -->
-      <!-- </div>
-        <div class="col-sm-4 "> -->
-      <!-- <label for="dexterity">dexterity</label>
-          <input
-            type="text"
-            class="form-control"
-            id="weapon.dexterity"
-            placeholder="dexterity"
-            formControlName="dexterity"
-            required
-          /> -->
-      <!-- </div>
-
-      </div>
-
-      <div class="row">
-        <div class="col-sm-4 "> -->
-      <!-- <label for="constitution">constitution</label>
-          <input
-            type="text"
-            class="form-control"
-            id="constitution"
-            placeholder="constitution"
-            formControlName="constitution"
-            required
-          /> -->
-      <!-- </div>
-        <div class="col-sm-4 "> -->
-      <!-- <label for="mod">mod</label>
-          <input
-            type="text"
-            class="form-control"
-            id="mod"
-            placeholder="mod"
-            formControlName="mod"
-            required
-          /> -->
-      <!-- </div>
-        <div class="col-sm-4 "> -->
-      <!-- <label for="inteligence">inteligence</label>
-          <input
-            type="text"
-            class="form-control"
-            id="weapon.inteligence"
-            placeholder="inteligence"
-            formControlName="inteligence"
-            required
-          /> -->
-      <!-- </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-4 "> -->
-      <!-- <label for="charisma">Wisdom</label>
-          <input
-          type="text"
-          class="form-control"
-          id="wisdom"
-          placeholder="wisdom"
-          formControlName="wisdom"
-          required
-        /> -->
-      <!-- </div>
-        <div class="col-sm-4 "> -->
-      <!-- <label for="charisma">charisma</label>
-          <input
-            type="text"
-            class="form-control"
-            id="charisma"
-            placeholder="charisma"
-            formControlName="charisma"
-            required
-          /> -->
-      <!-- </div>
-        <div class="col-sm-4 ">
-
-        </div>
-      </div> -->
-      <div class="buttonsBtn float-left">
-        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
-        <button type="button" class="btn btn-default" (click)="onCancel()">Cancel</button>
-      </div>
-    </form>
+    <div class="col-sm-4">
+      {{' '}}
+    </div>
   </div>
+
+  <div class="form-row">
+    <div class="col-sm-4" formGroupName="weapons">
+
+      <input type="checkbox" class="form-check-input" id="equipped" formControlName="equipped" />
+      <label class="equip" for="mod">Equipped</label>
+    </div>
+
+  </div>
+
+  <div class="buttonsBtn float-left">
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+    <button type="button" class="btn btn-default" (click)="onCancel()">Cancel</button>
+  </div>
+  </form>
+</div>
 
 </div>

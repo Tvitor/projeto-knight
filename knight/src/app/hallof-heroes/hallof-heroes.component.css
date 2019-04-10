@@ -5,11 +5,11 @@ ul, li {
 header {
   border: 5px;
   border-style: solid;
-  border-color: rgb(0, 0, 0);
+  border-color: rgb(214, 218, 25);
 }
 
 h1 {
   font-size: 50px;
   font-weight: bold;
-  color: rgb(141, 139, 139);
+  color: rgb(214, 218, 25);
 }

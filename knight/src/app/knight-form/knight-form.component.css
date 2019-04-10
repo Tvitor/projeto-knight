@@ -16,8 +16,12 @@ h3 {
 }
 
 input#equipped {
-  padding: 50px;
+  padding-top:20px;
   moz-transform: scale(2);
   -webkit-transform: scale(2);
   -o-transform: scale(2);
+}
+
+.equip {
+  padding-top: 10px;
 }

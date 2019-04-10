@@ -13,7 +13,10 @@ export class KnightFormComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private fb: FormBuilder, private service: KnightsService) { }
+
+  constructor(private fb: FormBuilder, private service: KnightsService) {
+
+   }
 
   ngOnInit() {
 
@@ -41,15 +44,6 @@ export class KnightFormComponent implements OnInit {
       keyAttribute:new FormControl('inteligence'),
       status: new FormControl(false) //default
 
-
-      // name:[""],
-      // nickname:[""],
-      // birthday: [null],
-      // keyAttribute:[null],
-      // weapons: this.fb.group({
-      //   name:[""],
-      //   attr:[""]
-      // })
     })
 
   }

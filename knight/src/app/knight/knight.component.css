@@ -82,9 +82,13 @@ h1 {
 h1 {
   font-size: 50px;
   font-weight: bold;
-  color: rgb(197, 167, 34);
+  color: rgb(77, 116, 243);
 }
 
+.btn-outline-warning {
+  color: rgb(91, 124, 233);;
+  border-color: rgb(105, 140, 253);
+}
 
 /* .listKnight {
   display: flex;
