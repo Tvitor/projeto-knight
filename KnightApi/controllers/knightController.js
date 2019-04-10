@@ -3,11 +3,6 @@ let knightController = function (Knight) {
     let get = function (req, res) {
 
         Knight.find(function (err, knights) {
-            knights.forEach(knight => {
-                if (knight.name == "Quigon") {
-                    knight.name = "Vitor"
-                }
-            });
             if (err) {
                 res.status(500)
                 res.send("internal error")
@@ -59,7 +54,8 @@ let knightController = function (Knight) {
                 knight.weapons = req.body.weapons;
                 knight.attributes = req.body.attributes;
                 knight.keyAttribute = req.body.keyAttribute;
-
+                knight.status = req.body.status;
+                
                 knight.save(function (err) {
                     if (!err) {
                         res.status(200)
@@ -73,6 +69,7 @@ let knightController = function (Knight) {
             }
         })
     }
+
 
     let del = function (req, res) {
         Knight.findById(req.params.id, function (err, knight) {

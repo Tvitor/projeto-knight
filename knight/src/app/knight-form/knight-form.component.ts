@@ -9,55 +9,68 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 })
 export class KnightFormComponent implements OnInit {
 
-  form: FormGroup
+ knightForm: FormGroup
+
   submitted = false;
 
   constructor(private fb: FormBuilder, private service: KnightsService) { }
 
   ngOnInit() {
 
-    this.form = this.fb.group({
-      name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(45)]],
-      nickname: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(45)]],
-      birthday: [null],
-      weapons: [{
-        name:[null],
-        mod:[null],
-        attr:[null],
-        equipped:[false],
-        amount:[null]
-      }],
-      // attributes: [{
-      //   type:[null],
-      //   dexterity:[null],
-      //   constitution:[null],
-      //   inteligence:[null],
-      //   wisdom:[null],
-      //   charisma:[null],
-      // }],
-      keyAttribute:[null],
+    this.knightForm = this.fb.group({
 
-    });
+      name: new FormControl('exampleKnight'),
+      nickname: new FormControl('example'),
+      birthday: new FormControl('1700-05-05'),
+      weapons:this.fb.group({
+        name: new FormControl('magic'),
+        mod:new FormControl(3),
+        attr:new FormControl('force'),
+        equipped:new FormControl(true),
+      }),
+
+      attributes:this.fb.group ({
+        strength:new FormControl(3),
+        dexterity:new FormControl(3),
+        constitution:new FormControl(3),
+        inteligence:new FormControl(3),
+        wisdom:new FormControl(3),
+        charisma:new FormControl(3),
+      }),
+
+      keyAttribute:new FormControl('inteligence'),
+      status: new FormControl(false) //default
+
+
+      // name:[""],
+      // nickname:[""],
+      // birthday: [null],
+      // keyAttribute:[null],
+      // weapons: this.fb.group({
+      //   name:[""],
+      //   attr:[""]
+      // })
+    })
 
   }
 
 hasError(field: string){
-  return this.form.get(field).errors
+  return this.knightForm.get(field).errors
 }
 
 onSubmit(){
   this.submitted = true;
-  console.log(this.form.value)
-  if(this.form.valid) {
+  console.log(this.knightForm.value)
+  if(this.knightForm.valid) {
     console.log('submit')
-    this.service.create(this.form.value).subscribe(
+    this.service.create(this.knightForm.value).subscribe(
       sucess => console.log('sucess')
     )
   }
 }
 onCancel(){
   this.submitted = false;
-  this.form.reset()
+  this.knightForm.reset()
 
 }
 }

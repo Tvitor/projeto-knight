@@ -74,9 +74,9 @@ h1 {
  } */
 
  header {
-  border: 5px;
+  /* border: 5px;
   border-style: solid;
-  border-color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0); */
 }
 
 h1 {
@@ -107,4 +107,10 @@ text-decoration:none;
 
 table {
   color: rgb(255, 255, 255);
+}
+
+
+.formButtons {
+  display: flex;
+  flex-wrap: wrap
 }

@@ -10,3 +10,14 @@
 .btn{
   color: rgb(255, 255, 255);
 }
+
+h3 {
+  padding-top: 10px;
+}
+
+input#equipped {
+  padding: 50px;
+  moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+}

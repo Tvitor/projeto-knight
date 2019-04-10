@@ -5,8 +5,8 @@
 <!--header -->
 
 <!-- <div *ngFor="let knight of list"> -->
-  <!--  If true then is Hero -->
-  <!-- <div *ngIf="knight.status === false">
+<!--  If true then is Hero -->
+<!-- <div *ngIf="knight.status === false">
     <div class="listKnight">
       <div class="row">
         <div class="col-sm">
@@ -66,53 +66,60 @@
     <thead>
       <tr class="float-left">
         <th>#</th>
-          <th>{{name}}</th>
-          <th>{{''}}</th>
-          <th>{{age}}</th>
-          <th>{{''}}</th>
-          <th>{{''}}</th>
-          <th>{{weapons}}</th>
-          <th>{{''}}</th>
-          <th>{{attribute}}</th>
-          <th></th>
+        <th>{{name}}</th>
+        <th>{{age}}</th>
+        <th>{{weapons}}</th>
+        <th>{{attribute}}</th>
+        <th>{{atkP}}</th>
+        <th>{{exp}}</th>
+        <th></th>
 
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let knight of knights let id = index">
-        <!--  If true then is Hero -->
-        <section *ngIf="knight.status === false">
+        <!--  If false then just Knight -->
+        <div *ngIf="knight.status === false">
 
-        <td>{{id}}</td>
-        <td>{{knight.name}}</td>
-        <td>{{knight.birthday| date: 'dd/MM/yyyy'}}</td>
-        <td *ngFor="let weapon of knight.weapons">
-            {{weapon.name}},
-            amount: {{weapon.amount}}</td>
-            <th>{{''}}</th>
-        <td>{{knight.keyAttribute}}</td>
-        <td>{{''}}</td>
-        <td>{{''}}</td>
-        <td>{{''}}</td>
-        <td>{{''}}</td>
-        <td>{{''}}</td>
-        <td>{{''}}</td>
-        <td>{{''}}</td>
-        <td>{{''}}</td>
-        <td>{{''}}</td>
-        <td>{{''}}</td>
-        <td>
-          <div class="float-right">
-            <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(knight)" >
-              Update Nickname
+          <td>{{id}}</td>
+          <td>{{knight.name}}</td>
+          <td>{{years}}</td>
+          <td *ngFor="let weapon of knight.weapons; let c = count">
+              {{c}}
+          </td>
+          <td>{{knight.keyAttribute}}</td>
+          <td>{{''}}</td>
+          <td>{{''}}</td>
+          <td>{{''}}</td>
+          <td>{{''}}</td>
+          <td>{{''}}</td>
+          <td>{{''}}</td>
+          <td>{{''}}</td>
+          <td>{{''}}</td>
+          <td>{{''}}</td>
+          <td>{{''}}</td>
+          <td>
+            <div class=" formButtons form row float-right">
+              <div class="row">
+              <div class="col-md-10">
+                <input type="text" class="form-control" id="update" placeholder="New Nickname"/>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-md-5">
+              <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(knight)" >
+              Submmit
             </button>
-
-            <button class="btn btn-outline-warning mb-1 btn-sm">
-               Remove Knight
+             </div>
+             <div class="col-md-5">
+              <button class="btn btn-outline-warning mb-1 btn-sm" (click)= "onDelete(knight)">
+                Remove
               </button>
-          </div>
-        </td>
-        </section>
+            </div>
+            </div>
+            </div>
+          </td>
+        </div>
       </tr>
     </tbody>
   </table>

@@ -1,3 +1,4 @@
+import { KnightsService } from './../modules/knights.service';
 //List Knights
 import { catchError, switchMap} from 'rxjs/operators';
 import { Router} from '@angular/router';
@@ -6,6 +7,7 @@ import {Knight} from "../modules/knight"
 import {Component,OnInit} from '@angular/core';
 import {Injectable} from '@angular/core';
 import {HttpClientModule,HttpClient,HttpHandler,HttpHeaders} from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-knight',
@@ -20,18 +22,40 @@ export class KnightComponent implements OnInit {
   age:String = 'Age'
   weapons:String = 'Weapons'
   attribute:String = 'Attribute'
-  attr:String = 'Attr'
-  exp:String = 'Exp'
+  atkP:String = 'Attack power' //need calc
+  exp:String = 'Exp' //need calc
   knights: Knight[]
+  idKnight: String = 'Knight id' //in api
 
-  constructor(private service: KnightsService){}
-
+  constructor(private service: KnightsService, private http: HttpClient){
+  }
   ngOnInit() {
     this.service.list()
       .subscribe(data => this.knights = data)
 
   }
 
+url ='http://localhost:5000/knight'
+newNickName = "Careca"
+onEdit(knight){
+
+    knight.nickname = this.newNickName
+    this.http.put(this.url + '/' + knight._id, knight)
+      .subscribe((knight) =>{
+        console.log('knight:', knight )
+      })
+
+}
+
+onDelete(knight) {
+  console.log(knight)
+    knight.status = true
+console.log(knight)
+    this.http.put(this.url + '/' + knight._id, knight)
+    .subscribe((knight) =>{
+      console.log('knight:', knight )
+    })
+  }
   // onEdit(knight) {
   //   let knightToUpdate
   //   let nameHero

@@ -1,6 +1,20 @@
 <div class="row">
   <div class="col-sm-12">
-    <form class="needs-validation primaryForm" novalidate [formGroup]="form">
+    <form class="needs-validation primaryForm" novalidate [formGroup]="knightForm">
+
+      <div class="row">
+        <div class="col-sm-4">
+          {{' '}}
+        </div>
+        <div class="col-sm-4">
+          <h3>KNIGHT</h3>
+        </div>
+
+        <div class="col-sm-4">
+          {{' '}}
+        </div>
+      </div>
+
       <div class="form-row">
 
         <div class="col-sm-4 ">
@@ -9,38 +23,103 @@
         </div>
 
         <div class="col-sm-4 ">
-          <label for="name">nickname</label>
+          <label for="name">Nickname</label>
           <input type="text" class="form-control" id="nickname" placeholder=" nickname" formControlName="nickname"
             required />
         </div>
 
         <div class="col-sm-4 ">
-          <label for="birthday">birthday</label>
+          <label for="birthday">Birthday</label>
           <input type="text" class="form-control" id="birthday" placeholder=" birthday" formControlName="birthday"
             required />
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-4">
+          {{' '}}
+        </div>
+        <div class="col-sm-4">
+          <h3>WEAPON</h3>
+        </div>
+
+        <div class="col-sm-4">
+          {{' '}}
+        </div>
+      </div>
+
+      <div class="form-row">
+
+        <div class="col-sm-4" formGroupName="weapons">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder=" Weapon Name" formControlName="name" required>
+        </div>
+        <!-- <label>equipped: <input type="text" formControlName="equipped" required></label>
+          <label>mod: <input type="text" formControlName="mod" required></label> -->
+        <div class="col-sm-4" formGroupName="weapons">
+          <label for="attr"> Type Attack</label>
+          <input type="text" class="form-control" id="attr" placeholder=" Type Attack" formControlName="attr" required>
+        </div>
+
+        <div class="col-sm-4" formGroupName="weapons">
+          <label for="equipped">Equipped</label>
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm">
+              <input type="checkbox" class="form-check-input" id="equipped" formControlName="equipped" />
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="row">
+          <div class="col-sm-4">
+            {{' '}}
+          </div>
+          <div class="col-sm-4">
+            <h3>Attributes</h3>
+          </div>
 
-        <div class="col-sm-4 ">
-          <label for="name">Weapon name</label>
-          <input type="text" class="form-control" id="name" placeholder="name" formControlName="name"
-            required />
+          <div class="col-sm-4">
+            {{' '}}
+          </div>
         </div>
-        <div class="col-sm-4 ">
-          <!-- <label for="weapons.attr">attr</label>
-          <input
-            type="text"
-            class="form-control"
-            id="weapons"
-            placeholder="attr"
-            formControlName="weapons.attr"
-            required
-          /> -->
-        </div>
-        <div class="col-sm-4 ">
-          <!-- <label for="equipped">equipped</label>
+
+      <div class="form-row">
+          <div class="col-sm-4" formGroupName="attributes">
+              <label for="strength">Strength</label>
+              <input type="text" class="form-control" id="strength" placeholder="Strength" formControlName="strength" required>
+            </div>
+
+            <div class="col-sm-4" formGroupName="attributes">
+                <label for="dexterity">Dexterity</label>
+                <input type="text" class="form-control" id="dexterity" placeholder="Dexterity" formControlName="dexterity" required>
+              </div>
+
+              <div class="col-sm-4" formGroupName="attributes">
+                  <label for="constitution">Constitution</label>
+                  <input type="text" class="form-control" id="constitution" placeholder="Constitution" formControlName="constitution" required>
+                </div>
+      </div>
+
+      <div class="form-row">
+          <div class="col-sm-4" formGroupName="attributes">
+              <label for="wisdom">Wisdom</label>
+              <input type="text" class="form-control" id="wisdom" placeholder=" Wisdom" formControlName="wisdom" required>
+            </div>
+
+            <div class="col-sm-4" formGroupName="attributes">
+                <label for="inteligence">Inteligence</label>
+                <input type="text" class="form-control" id="inteligence" placeholder="Inteligence" formControlName="inteligence" required>
+              </div>
+
+              <div class="col-sm-4" formGroupName="attributes">
+                  <label for="charisma">Charisma</label>
+                  <input type="text" class="form-control" id="charisma" placeholder="Charisma" formControlName="charisma" required>
+                </div>
+      </div>
+
+
+      <!-- <label for="equipped">equipped</label>
             <input
               type="text"
               class="form-control"
@@ -49,12 +128,12 @@
               formControlName="equipped"
               required
             /> -->
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-4 ">
-          <!-- <label for="amount">amount</label>
+
+      <!-- <div class="row"> -->
+
+
+      <!-- <label for="amount">amount</label>
               <input
                 type="text"
                 class="form-control"
@@ -63,9 +142,9 @@
                 formControlName="amount"
                 required
               /> -->
-        </div>
-        <div class="col-sm-4 ">
-          <!-- <label for="strength">strength</label>
+      <!-- </div>
+        <div class="col-sm-4 "> -->
+      <!-- <label for="strength">strength</label>
               <input
                 type="text"
                 class="form-control"
@@ -74,9 +153,9 @@
                 formControlName="strength"
                 required
               /> -->
-        </div>
-        <div class="col-sm-4 ">
-          <!-- <label for="dexterity">dexterity</label>
+      <!-- </div>
+        <div class="col-sm-4 "> -->
+      <!-- <label for="dexterity">dexterity</label>
           <input
             type="text"
             class="form-control"
@@ -85,13 +164,13 @@
             formControlName="dexterity"
             required
           /> -->
-        </div>
+      <!-- </div>
 
       </div>
 
       <div class="row">
-        <div class="col-sm-4 ">
-          <!-- <label for="constitution">constitution</label>
+        <div class="col-sm-4 "> -->
+      <!-- <label for="constitution">constitution</label>
           <input
             type="text"
             class="form-control"
@@ -100,9 +179,9 @@
             formControlName="constitution"
             required
           /> -->
-        </div>
-        <div class="col-sm-4 ">
-          <!-- <label for="mod">mod</label>
+      <!-- </div>
+        <div class="col-sm-4 "> -->
+      <!-- <label for="mod">mod</label>
           <input
             type="text"
             class="form-control"
@@ -111,9 +190,9 @@
             formControlName="mod"
             required
           /> -->
-        </div>
-        <div class="col-sm-4 ">
-          <!-- <label for="inteligence">inteligence</label>
+      <!-- </div>
+        <div class="col-sm-4 "> -->
+      <!-- <label for="inteligence">inteligence</label>
           <input
             type="text"
             class="form-control"
@@ -122,12 +201,12 @@
             formControlName="inteligence"
             required
           /> -->
-        </div>
+      <!-- </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-4 ">
-          <!-- <label for="charisma">Wisdom</label>
+        <div class="col-sm-4 "> -->
+      <!-- <label for="charisma">Wisdom</label>
           <input
           type="text"
           class="form-control"
@@ -136,9 +215,9 @@
           formControlName="wisdom"
           required
         /> -->
-        </div>
-        <div class="col-sm-4 ">
-          <!-- <label for="charisma">charisma</label>
+      <!-- </div>
+        <div class="col-sm-4 "> -->
+      <!-- <label for="charisma">charisma</label>
           <input
             type="text"
             class="form-control"
@@ -147,19 +226,11 @@
             formControlName="charisma"
             required
           /> -->
-        </div>
+      <!-- </div>
         <div class="col-sm-4 ">
-          <label for="keyAttribute">keyAttribute</label>
-          <input
-            type="text"
-            class="form-control"
-            id="keyAttribute"
-            placeholder="Primary Attribute"
-            formControlName="keyAttribute"
-            required
-          />
+
         </div>
-      </div>
+      </div> -->
       <div class="buttonsBtn float-left">
         <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
         <button type="button" class="btn btn-default" (click)="onCancel()">Cancel</button>
