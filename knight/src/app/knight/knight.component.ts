@@ -1,3 +1,4 @@
+
 //List Knights
 import { catchError, switchMap} from 'rxjs/operators';
 import { Router} from '@angular/router';
@@ -7,6 +8,9 @@ import {Component,OnInit, Input} from '@angular/core';
 import {Injectable} from '@angular/core';
 import {HttpClientModule,HttpClient,HttpHandler,HttpHeaders} from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { Observable, of, throwError, pipe} from "rxjs";
+import 'rxjs/add/operator/map';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-knight',
@@ -14,6 +18,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./knight.component.css'],
   preserveWhitespaces: true
 })
+
 
 export class KnightComponent implements OnInit {
 
@@ -26,18 +31,21 @@ export class KnightComponent implements OnInit {
   attack: Number
   knights: Knight[]
   url ='http://localhost:5000/knight'
-
-years = new Date()
-
-  constructor(private service: KnightsService, private http: HttpClient){
-  }
-  ngOnInit() {
-    this.service.list()
-      .subscribe(data => this.knights = data)
-
-  }
+  experience: Number = 0
+  years = new Date()
+  all: any
 
   @Input() newNickName: String
+
+  constructor(private service: KnightsService, private http: HttpClient){}
+
+  ngOnInit() {
+       this.service.list()
+        .subscribe(data => this.knights = data,
+        error => console.log(error, 'not found'))
+
+      
+  }
 
 onEdit(knight){
   console.log(this.newNickName)
@@ -52,7 +60,7 @@ onEdit(knight){
 onDelete(knight) {
   console.log(knight)
     knight.status = true
-console.log(knight)
+  console.log(knight)
     this.http.put(this.url + '/' + knight._id, knight)
     .subscribe((knight) =>{
       console.log('knight:', knight )

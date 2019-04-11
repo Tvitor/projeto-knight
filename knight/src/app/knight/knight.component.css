@@ -113,5 +113,19 @@ table {
   color: rgb(255, 255, 255);
 }
 
+.tdId {
+  padding-right: 12px;
+  padding-left: 2px;
+}
 
+.tdAge {
+  padding-right: 2px;
+}
 
+.tdAmount{
+  padding-right: 60px;
+}
+
+.tdKey{
+  padding-right: 20px;
+}
