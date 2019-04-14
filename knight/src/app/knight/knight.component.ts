@@ -31,12 +31,48 @@ export class KnightComponent implements OnInit {
   attack: Number
   knights: Knight[]
   url ='http://localhost:5000/knight'
-  experience: Number = 0
   years = new Date()
   all: any
-
+  experience: Number
+  aniver
   @Input() newNickName: String
 
+  getExp(exp){
+   exp = Math.floor((this.aniver - 7) * Math.pow(22, 1.45))
+   this.experience = exp
+   return exp
+  }
+
+  fixAge(age) {
+    this.aniver = age * (-1)
+    return age * (-1)
+  }
+
+  attr(mod) {
+    if (mod > 2){
+      return 20
+    }
+
+    if (mod === 2){
+      return 18
+    }
+
+    if (mod === 1){
+      return 15
+    }
+
+    if (mod === 0){
+      return 12
+    }
+
+    if (mod === -1){
+      return 10
+    }
+
+    if (mod === -2){
+      return 8
+    }
+  }
   constructor(private service: KnightsService, private http: HttpClient){}
 
   ngOnInit() {
@@ -44,7 +80,6 @@ export class KnightComponent implements OnInit {
         .subscribe(data => this.knights = data,
         error => console.log(error, 'not found'))
 
-      
   }
 
 onEdit(knight){

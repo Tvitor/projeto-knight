@@ -14,9 +14,7 @@ export class KnightFormComponent implements OnInit {
   submitted = false;
 
 
-  constructor(private fb: FormBuilder, private service: KnightsService) {
-
-   }
+  constructor(private fb: FormBuilder, private service: KnightsService) {}
 
   ngOnInit() {
 

@@ -83,14 +83,18 @@
 
           <td class="tdId">{{id}}</td>
           <td class="tdName">{{knight.name}}</td>
-          <td class="tdAge">{{  knight.birthday |  amDateFormat: 'YYYY'|   amDifference: today: 'years' }} Years</td>
+          <td class="tdAge">{{ fixAge( knight.birthday |  amDateFormat: 'YYYY'|   amDifference: today: 'years' ) }} Years</td>
 
           <td class="tdAmount" *ngFor="let weapon of knight.weapons; let c = count; let l = last">
             <div class="td5" *ngIf="l === true">
               {{c}}
             </div>
           </td>
+
           <td class="tdKey">{{knight.keyAttribute}}</td>
+          <td class="tdAttr" *ngFor="let weapon of knight.weapons">{{attr(weapon.mod)}}</td>
+          <td class="tdExp">{{getExp(exp)}}</td>
+
 
           <td>
             <div class=" formButtons form row float-right">
